@@ -14,3 +14,4 @@ C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\refint\lifeSim
 C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.pdb
 C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.genruntimeconfig.cache
 C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\ref\lifeSimulator.dll
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.sourcelink.json
