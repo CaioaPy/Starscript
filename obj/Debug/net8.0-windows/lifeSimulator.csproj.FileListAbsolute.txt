@@ -1,0 +1,16 @@
+C:\Users\User\source\repos\lifeSimulator\bin\Debug\net8.0-windows\lifeSimulator.exe
+C:\Users\User\source\repos\lifeSimulator\bin\Debug\net8.0-windows\lifeSimulator.deps.json
+C:\Users\User\source\repos\lifeSimulator\bin\Debug\net8.0-windows\lifeSimulator.runtimeconfig.json
+C:\Users\User\source\repos\lifeSimulator\bin\Debug\net8.0-windows\lifeSimulator.dll
+C:\Users\User\source\repos\lifeSimulator\bin\Debug\net8.0-windows\lifeSimulator.pdb
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.Form1.resources
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.csproj.GenerateResource.cache
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.AssemblyInfo.cs
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.dll
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\refint\lifeSimulator.dll
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.pdb
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\lifeSimulator.genruntimeconfig.cache
+C:\Users\User\source\repos\lifeSimulator\obj\Debug\net8.0-windows\ref\lifeSimulator.dll
