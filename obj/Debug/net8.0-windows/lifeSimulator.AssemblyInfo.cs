@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lifeSimulator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea1591fb2f0cd47840d6e6593bb813c31bd41a61")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5eb98df0dc750b72364dee2853c1e76322e44734")]
 [assembly: System.Reflection.AssemblyProductAttribute("lifeSimulator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lifeSimulator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
