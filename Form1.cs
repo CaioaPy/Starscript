@@ -1,12 +1,19 @@
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
 namespace lifeSimulator
 {
     public partial class Form1 : Form
     {
+        private System.Windows.Forms.Timer timer;
+
         public Form1()
         {
             InitializeComponent();
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 50;
+            timer.Tick += timer_Tick;
+            timer.Start();
         }
 
         //currency and modifiers
@@ -18,6 +25,12 @@ namespace lifeSimulator
 
         //upgrades
         bool upgrade1Bought = false;
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            starsVar.Text = "Stars: " + stars;
+            starsLabel.Text = "Stars: " + stars;
+        }
 
         double starsFunc(double baseStars)
         {
@@ -37,6 +50,8 @@ namespace lifeSimulator
             {
                 label2.Visible = true;
                 htmlCssButton.Visible = true;
+                htmlCssBar.Visible = true;
+                tabPage2.Visible = true;
             }
             if (currentClicks >= 25)
             {
@@ -64,8 +79,14 @@ namespace lifeSimulator
                 await Task.Delay(tick);
             }
 
+            int finalDelay = 350;
+            if (time >= 2000)
+            {
+                finalDelay = 200;
+            }
+
             bar.Value = bar.Maximum;
-            await Task.Delay(tick);
+            await Task.Delay(finalDelay);
             bar.Value = 0;
         }
 
@@ -77,7 +98,7 @@ namespace lifeSimulator
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Text = "Stars: " + stars;
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -96,7 +117,6 @@ namespace lifeSimulator
             double buttonTime = timeFunc(time);
             await barFunc(timeFunc(buttonTime), pokedexBar);
             stars += starsFunc(1);
-            starsVar.Text = "Stars: " + stars;
             clicks += clicksFunc(1);
             unlockFunc(clicks);
         }
@@ -105,10 +125,12 @@ namespace lifeSimulator
             Text = "Stars: " + stars;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private async void button1_Click_1(object sender, EventArgs e)
         {
+            int time = 2000;
+            double buttonTime = timeFunc(time);
+            await barFunc(timeFunc(buttonTime), htmlCssBar);
             stars += starsFunc(2.5);
-            starsVar.Text = "Stars: " + stars;
             clicks += clicksFunc(1);
             unlockFunc(clicks);
         }
@@ -136,7 +158,7 @@ namespace lifeSimulator
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            starsLabel.Text = "Stars: " + stars;
+
         }
 
         private void label5_Click(object sender, EventArgs e)

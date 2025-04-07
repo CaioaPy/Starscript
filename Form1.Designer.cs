@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tabControl = new TabControl();
             tabPage1 = new TabPage();
+            htmlCssBar = new ProgressBar();
             pokedexBar = new ProgressBar();
             label2 = new Label();
             htmlCssButton = new Button();
@@ -61,6 +62,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.AutoScroll = true;
+            tabPage1.Controls.Add(htmlCssBar);
             tabPage1.Controls.Add(pokedexBar);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(htmlCssButton);
@@ -75,6 +78,14 @@
             tabPage1.Text = "Work";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
+            // 
+            // htmlCssBar
+            // 
+            htmlCssBar.Location = new Point(6, 188);
+            htmlCssBar.Name = "htmlCssBar";
+            htmlCssBar.Size = new Size(251, 23);
+            htmlCssBar.TabIndex = 7;
+            htmlCssBar.Visible = false;
             // 
             // pokedexBar
             // 
@@ -96,7 +107,7 @@
             // 
             // htmlCssButton
             // 
-            htmlCssButton.Location = new Point(0, 211);
+            htmlCssButton.Location = new Point(3, 217);
             htmlCssButton.Name = "htmlCssButton";
             htmlCssButton.Size = new Size(124, 32);
             htmlCssButton.TabIndex = 4;
@@ -138,7 +149,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.BackColor = Color.Transparent;
+            tabPage2.BackColor = Color.White;
             tabPage2.Controls.Add(upgrade1);
             tabPage2.Controls.Add(groupBox1);
             tabPage2.Controls.Add(starsLabel);
@@ -245,5 +256,6 @@
         private HScrollBar hScrollBar1;
         private Button button2;
         private Label starsLabel;
+        private ProgressBar htmlCssBar;
     }
 }
