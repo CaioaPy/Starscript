@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace lifeSimulator
 {
     public partial class Form1 : Form
@@ -9,9 +11,10 @@ namespace lifeSimulator
 
         //currency and modifiers
         double stars = 0;
-        double starsModifier = 133;
+        double starsModifier = 1.0;
         int clicks = 0;
-        int clicksModifier = 133;
+        int clicksModifier = 1;
+        double timeModifier = 1.0;
 
         //upgrades
         bool upgrade1Bought = false;
@@ -42,6 +45,31 @@ namespace lifeSimulator
             return 0;
         }
 
+        double timeFunc(double baseTime)
+        {
+            double finalTime = baseTime * timeModifier;
+            return finalTime;
+        }
+
+        async Task barFunc(double time, ProgressBar bar)
+        {
+            int tick = (int)(time / 5);
+            int steps = (int)(time / tick);
+            int increment = bar.Maximum / steps;
+
+            bar.Value = 0;
+            for (int i = 0; i < steps; i++)
+            {
+                bar.Value = Math.Min(bar.Maximum, bar.Value + increment);
+                await Task.Delay(tick);
+            }
+
+            bar.Value = bar.Maximum;
+            await Task.Delay(tick);
+            bar.Value = 0;
+        }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -62,8 +90,11 @@ namespace lifeSimulator
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
+            int time = 1000;
+            double buttonTime = timeFunc(time);
+            await barFunc(timeFunc(buttonTime), pokedexBar);
             stars += starsFunc(1);
             starsVar.Text = "Stars: " + stars;
             clicks += clicksFunc(1);
