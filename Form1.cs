@@ -9,9 +9,9 @@ namespace lifeSimulator
 
         //currency and modifiers
         double stars = 0;
-        double starsModifier = 1;
+        double starsModifier = 133;
         int clicks = 0;
-        int clicksModifier = 1;
+        int clicksModifier = 133;
 
         //upgrades
         bool upgrade1Bought = false;
@@ -82,12 +82,12 @@ namespace lifeSimulator
             unlockFunc(clicks);
         }
 
-        private void upgrade1_Click(object sender, EventArgs e)
+        private void upgrade1_Click_1(object sender, EventArgs e)
         {
             if (upgrade1Bought)
             {
-                    MessageBox.Show("You already bought the upgrade!");
-                    return;
+                MessageBox.Show("You already bought the upgrade!");
+                return;
             }
 
             if (stars >= 130)
@@ -101,6 +101,16 @@ namespace lifeSimulator
             {
                 MessageBox.Show("You need 130 stars to buy this upgrade!");
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            starsLabel.Text = "Stars: " + stars;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
