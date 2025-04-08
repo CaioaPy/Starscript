@@ -21,7 +21,7 @@ namespace lifeSimulator
         double starsModifier = 1.0;
         int clicks = 0;
         int clicksModifier = 1;
-        double timeModifier = 1.0;
+        double timeModifier = 0.23;
 
         //upgrades
         bool upgrade1Bought = false;
@@ -69,6 +69,20 @@ namespace lifeSimulator
         async Task barFunc(double time, ProgressBar bar)
         {
             int tick = (int)(time / 5);
+
+            if (timeModifier < 0.90)
+            {
+                tick = (int)(time / 4);
+            }
+            if (timeModifier < 0.70)
+            {
+                tick = (int)(time / 3);
+            }
+            if (timeModifier < 0.50)
+            {
+                tick = (int)(time / 2);
+            }
+
             int steps = (int)(time / tick);
             int increment = bar.Maximum / steps;
 
@@ -111,28 +125,37 @@ namespace lifeSimulator
 
         }
 
+        bool cooldown1 = false;
         private async void button1_Click(object sender, EventArgs e)
         {
-            int time = 1000;
-            double buttonTime = timeFunc(time);
-            await barFunc(timeFunc(buttonTime), pokedexBar);
-            stars += starsFunc(1);
-            clicks += clicksFunc(1);
-            unlockFunc(clicks);
+            if (!cooldown1)
+            {
+                int time = 1000;
+                cooldown1 = true;
+                double buttonTime = timeFunc(time);
+                await barFunc(timeFunc(buttonTime), pokedexBar);
+                stars += starsFunc(1);
+                clicks += clicksFunc(1);
+                unlockFunc(clicks);
+                cooldown1 = false;
+            }
         }
         private void label2_Click(object sender, EventArgs e)
         {
             Text = "Stars: " + stars;
         }
 
+        bool cooldown2 = false;
         private async void button1_Click_1(object sender, EventArgs e)
         {
             int time = 2000;
+            cooldown2 = true;
             double buttonTime = timeFunc(time);
             await barFunc(timeFunc(buttonTime), htmlCssBar);
             stars += starsFunc(2.5);
             clicks += clicksFunc(1);
             unlockFunc(clicks);
+            cooldown2 = false;
         }
 
         private void upgrade1_Click_1(object sender, EventArgs e)
