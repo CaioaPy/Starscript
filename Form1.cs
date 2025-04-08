@@ -6,6 +6,9 @@ namespace lifeSimulator
     public partial class Form1 : Form
     {
         private System.Windows.Forms.Timer timer;
+        private TabPage hiddenTab;
+
+        List<TabPage> hiddenTabs = new List<TabPage>();
 
         public Form1()
         {
@@ -14,6 +17,7 @@ namespace lifeSimulator
             timer.Interval = 50;
             timer.Tick += timer_Tick;
             timer.Start();
+            HideTab("upgradesTab"); //hide tab
         }
 
         //currency and modifiers
@@ -25,6 +29,31 @@ namespace lifeSimulator
 
         //upgrades
         bool upgrade1Bought = false;
+
+        private void HideTab(string tabName)
+        {
+            var tabToHide = tabControl.TabPages
+                .Cast<TabPage>()
+                .FirstOrDefault(tab => tab.Name == tabName);
+
+            if (tabToHide != null)
+            {
+                tabControl.TabPages.Remove(tabToHide);
+                hiddenTabs.Add(tabToHide);
+            }
+        }
+
+        private void ShowTab(string tabName, int index)
+        {
+            var tabToShow = hiddenTabs
+                .FirstOrDefault(tab => tab.Name == tabName);
+
+            if (tabToShow != null && !tabControl.TabPages.Contains(tabToShow))
+            {
+                tabControl.TabPages.Insert(index, tabToShow);
+                hiddenTabs.Remove(tabToShow);
+            }
+        }
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -51,11 +80,12 @@ namespace lifeSimulator
                 label2.Visible = true;
                 htmlCssButton.Visible = true;
                 htmlCssBar.Visible = true;
-                tabPage2.Visible = true;
+                upgradesTab.Visible = true;
             }
             if (currentClicks >= 25)
             {
                 upgrade1.Visible = true;
+                ShowTab("upgradesTab", 1);
             }
             return 0;
         }
@@ -185,6 +215,11 @@ namespace lifeSimulator
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
         }

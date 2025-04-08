@@ -29,8 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            tabControl = new TabControl();
+            upgradesTab = new TabPage();
+            upgrade1 = new Button();
+            groupBox1 = new GroupBox();
+            hScrollBar1 = new HScrollBar();
+            button2 = new Button();
+            starsLabel = new Label();
             tabPage1 = new TabPage();
+            workScrollBar = new VScrollBar();
             htmlCssBar = new ProgressBar();
             pokedexBar = new ProgressBar();
             label2 = new Label();
@@ -38,31 +44,91 @@
             label1 = new Label();
             starsVar = new Label();
             pokedexButton = new Button();
-            tabPage2 = new TabPage();
-            upgrade1 = new Button();
-            groupBox1 = new GroupBox();
-            hScrollBar1 = new HScrollBar();
-            button2 = new Button();
-            starsLabel = new Label();
-            tabControl.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            tabControl = new TabControl();
+            upgradesTab.SuspendLayout();
             groupBox1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabControl.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl
+            // upgradesTab
             // 
-            tabControl.Controls.Add(tabPage1);
-            tabControl.Controls.Add(tabPage2);
-            tabControl.Location = new Point(-3, 0);
-            tabControl.Name = "tabControl";
-            tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(930, 450);
-            tabControl.TabIndex = 0;
+            upgradesTab.BackColor = Color.White;
+            upgradesTab.Controls.Add(upgrade1);
+            upgradesTab.Controls.Add(groupBox1);
+            upgradesTab.Controls.Add(starsLabel);
+            upgradesTab.Location = new Point(4, 24);
+            upgradesTab.Name = "upgradesTab";
+            upgradesTab.Padding = new Padding(3);
+            upgradesTab.Size = new Size(922, 422);
+            upgradesTab.TabIndex = 1;
+            upgradesTab.Text = "Upgrades";
+            upgradesTab.Click += tabPage2_Click;
+            // 
+            // upgrade1
+            // 
+            upgrade1.BackColor = Color.Black;
+            upgrade1.Font = new Font("Cambria", 12F);
+            upgrade1.ForeColor = Color.LimeGreen;
+            upgrade1.Location = new Point(11, 43);
+            upgrade1.Name = "upgrade1";
+            upgrade1.Size = new Size(148, 113);
+            upgrade1.TabIndex = 3;
+            upgrade1.Text = "[130 stars] First 'Hello World' (+20% stars)";
+            upgrade1.UseVisualStyleBackColor = false;
+            upgrade1.Visible = false;
+            upgrade1.Click += upgrade1_Click_1;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Bottom;
+            groupBox1.BackColor = Color.DarkGray;
+            groupBox1.Controls.Add(hScrollBar1);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Font = new Font("Segoe UI", 20F);
+            groupBox1.Location = new Point(357, 568);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(940, 195);
+            groupBox1.TabIndex = 2;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Upgrades";
+            // 
+            // hScrollBar1
+            // 
+            hScrollBar1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            hScrollBar1.Location = new Point(0, 251);
+            hScrollBar1.Name = "hScrollBar1";
+            hScrollBar1.Size = new Size(926, 17);
+            hScrollBar1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.Font = new Font("Cambria", 12F);
+            button2.ForeColor = Color.LimeGreen;
+            button2.Location = new Point(6, 42);
+            button2.Name = "button2";
+            button2.Size = new Size(148, 113);
+            button2.TabIndex = 0;
+            button2.Text = "[130 stars] First 'Hello World' (+20% stars)";
+            button2.UseVisualStyleBackColor = false;
+            button2.Visible = false;
+            // 
+            // starsLabel
+            // 
+            starsLabel.AutoSize = true;
+            starsLabel.Font = new Font("Segoe UI", 20F);
+            starsLabel.Location = new Point(-4, 0);
+            starsLabel.Name = "starsLabel";
+            starsLabel.Size = new Size(101, 37);
+            starsLabel.TabIndex = 1;
+            starsLabel.Text = "Stars: 0";
+            starsLabel.Click += label5_Click;
             // 
             // tabPage1
             // 
             tabPage1.AutoScroll = true;
+            tabPage1.Controls.Add(workScrollBar);
             tabPage1.Controls.Add(htmlCssBar);
             tabPage1.Controls.Add(pokedexBar);
             tabPage1.Controls.Add(label2);
@@ -78,6 +144,15 @@
             tabPage1.Text = "Work";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
+            // 
+            // workScrollBar
+            // 
+            workScrollBar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            workScrollBar.Location = new Point(905, 0);
+            workScrollBar.Name = "workScrollBar";
+            workScrollBar.Size = new Size(17, 422);
+            workScrollBar.TabIndex = 8;
+            workScrollBar.Scroll += vScrollBar1_Scroll;
             // 
             // htmlCssBar
             // 
@@ -147,79 +222,15 @@
             pokedexButton.UseVisualStyleBackColor = true;
             pokedexButton.Click += button1_Click;
             // 
-            // tabPage2
+            // tabControl
             // 
-            tabPage2.BackColor = Color.White;
-            tabPage2.Controls.Add(upgrade1);
-            tabPage2.Controls.Add(groupBox1);
-            tabPage2.Controls.Add(starsLabel);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(922, 422);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Upgrades";
-            tabPage2.Click += tabPage2_Click;
-            // 
-            // upgrade1
-            // 
-            upgrade1.BackColor = Color.Black;
-            upgrade1.Font = new Font("Cambria", 12F);
-            upgrade1.ForeColor = Color.LimeGreen;
-            upgrade1.Location = new Point(11, 43);
-            upgrade1.Name = "upgrade1";
-            upgrade1.Size = new Size(148, 113);
-            upgrade1.TabIndex = 3;
-            upgrade1.Text = "[130 stars] First 'Hello World' (+20% stars)";
-            upgrade1.UseVisualStyleBackColor = false;
-            upgrade1.Visible = false;
-            upgrade1.Click += upgrade1_Click_1;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Anchor = AnchorStyles.Bottom;
-            groupBox1.BackColor = Color.DarkGray;
-            groupBox1.Controls.Add(hScrollBar1);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Font = new Font("Segoe UI", 20F);
-            groupBox1.Location = new Point(357, 568);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(940, 195);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Upgrades";
-            // 
-            // hScrollBar1
-            // 
-            hScrollBar1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            hScrollBar1.Location = new Point(0, 251);
-            hScrollBar1.Name = "hScrollBar1";
-            hScrollBar1.Size = new Size(926, 17);
-            hScrollBar1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Black;
-            button2.Font = new Font("Cambria", 12F);
-            button2.ForeColor = Color.LimeGreen;
-            button2.Location = new Point(6, 42);
-            button2.Name = "button2";
-            button2.Size = new Size(148, 113);
-            button2.TabIndex = 0;
-            button2.Text = "[130 stars] First 'Hello World' (+20% stars)";
-            button2.UseVisualStyleBackColor = false;
-            button2.Visible = false;
-            // 
-            // starsLabel
-            // 
-            starsLabel.AutoSize = true;
-            starsLabel.Font = new Font("Segoe UI", 20F);
-            starsLabel.Location = new Point(-4, 0);
-            starsLabel.Name = "starsLabel";
-            starsLabel.Size = new Size(101, 37);
-            starsLabel.TabIndex = 1;
-            starsLabel.Text = "Stars: 0";
-            starsLabel.Click += label5_Click;
+            tabControl.Controls.Add(tabPage1);
+            tabControl.Controls.Add(upgradesTab);
+            tabControl.Location = new Point(-3, 0);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(930, 450);
+            tabControl.TabIndex = 0;
             // 
             // Form1
             // 
@@ -231,31 +242,32 @@
             Name = "Form1";
             Text = "Starscript";
             Load += Form1_Load;
-            tabControl.ResumeLayout(false);
+            upgradesTab.ResumeLayout(false);
+            upgradesTab.PerformLayout();
+            groupBox1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
-            groupBox1.ResumeLayout(false);
+            tabControl.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tabControl;
-        private TabPage tabPage1;
-        private Label starsVar;
-        private Button pokedexButton;
-        private Label label1;
-        private Label label2;
-        private Button htmlCssButton;
-        private ProgressBar pokedexBar;
-        private TabPage tabPage2;
+        private TabPage upgradesTab;
         private Button upgrade1;
         private GroupBox groupBox1;
         private HScrollBar hScrollBar1;
         private Button button2;
         private Label starsLabel;
+        private TabPage tabPage1;
+        private VScrollBar workScrollBar;
         private ProgressBar htmlCssBar;
+        private ProgressBar pokedexBar;
+        private Label label2;
+        private Button htmlCssButton;
+        private Label label1;
+        private Label starsVar;
+        private Button pokedexButton;
+        private TabControl tabControl;
     }
 }
