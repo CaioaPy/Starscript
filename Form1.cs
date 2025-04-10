@@ -25,10 +25,13 @@ namespace lifeSimulator
         double starsModifier = 1.0;
         int clicks = 0;
         int clicksModifier = 1;
-        double timeModifier = 0.23;
+        double timeModifier = 1;
 
         //upgrades
         bool upgrade1Bought = false;
+        bool upgrade2Bought = false;
+        bool upgrade3Bought = false;
+        bool upgrade4Bought = false;
 
         private void HideTab(string tabName)
         {
@@ -59,6 +62,10 @@ namespace lifeSimulator
         {
             starsVar.Text = "Stars: " + stars;
             starsLabel.Text = "Stars: " + stars;
+            if (upgrade3Bought)
+            {
+                stars += Math.Floor(starsFunc(0.25) * 0.05);
+            }
         }
 
         double starsFunc(double baseStars)
@@ -80,29 +87,37 @@ namespace lifeSimulator
                 label2.Visible = true;
                 htmlCssButton.Visible = true;
                 htmlCssBar.Visible = true;
+                upgrade1.Visible = true;
+                upgrade1Label.Visible = true;
+                ShowTab("upgradesTab", 1);
             }
             if (currentClicks >= 25)
             {
-                upgrade1.Visible = true;
-                ShowTab("upgradesTab", 1);
+                upgrade2.Visible = true;
+                upgrade2Label.Visible = true;
             }
             if (currentClicks >= 50)
             {
                 label3.Visible = true;
                 toDoButton.Visible = true;
                 toDoBar.Visible = true;
+                upgrade3Button.Visible = true;
+                upgrade3Label.Visible = true;
+
             }
             if (currentClicks >= 60)
             {
-                upgrade1.Visible = true;
+                upgrade4Button.Visible = true;
+                upgrade4Label.Visible = true;
+
             }
-            if (currentClicks >= 110)
+            if (currentClicks >= 75)
             {
                 label4.Visible = true;
                 badDocumentationBar.Visible = true;
                 badDocumentationButton.Visible = true;
             }
-            if (currentClicks >= 130)
+            if (currentClicks >= 110)
             {
                 label5.Visible = true;
                 calculatorBar.Visible = true;
@@ -224,16 +239,16 @@ namespace lifeSimulator
                 return;
             }
 
-            if (stars >= 130)
+            if (stars >= 50)
             {
                 upgrade1.Text = "First 'Hello World' (Bought)";
-                starsModifier *= 1.2;
-                stars -= 130;
+                starsModifier *= 1.3;
+                stars -= 50;
                 upgrade1Bought = true;
             }
             else
             {
-                MessageBox.Show("You need 130 stars to buy this upgrade!");
+                MessageBox.Show("You need 50 stars to buy this upgrade!");
             }
         }
 
@@ -286,7 +301,7 @@ namespace lifeSimulator
                 int time = 5500;
                 cooldown4 = true;
                 double buttonTime = timeFunc(time);
-                await barFunc(timeFunc(buttonTime), toDoBar);
+                await barFunc(timeFunc(buttonTime), badDocumentationBar);
                 stars += starsFunc(12);
                 clicks += clicksFunc(1);
                 unlockFunc(clicks);
@@ -307,11 +322,88 @@ namespace lifeSimulator
                 int time = 8000;
                 cooldown5 = true;
                 double buttonTime = timeFunc(time);
-                await barFunc(timeFunc(buttonTime), toDoBar);
+                await barFunc(timeFunc(buttonTime), calculatorBar);
                 stars += starsFunc(20);
                 clicks += clicksFunc(1);
                 unlockFunc(clicks);
                 cooldown5 = false;
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void upgrade2_Click(object sender, EventArgs e)
+        {
+            if (upgrade2Bought)
+            {
+                MessageBox.Show("You already bought the upgrade!");
+                return;
+            }
+
+            if (stars >= 230)
+            {
+                upgrade2.Text = "StackOverflow Link Scrolls (Bought)";
+                timeModifier *= 0.75;
+                stars -= 230;
+                upgrade2Bought = true;
+            }
+            else
+            {
+                MessageBox.Show("You need 230 stars to buy this upgrade!");
+            }
+        }
+
+        private void upgrade2Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void upgrade3Button_Click(object sender, EventArgs e)
+        {
+            {
+                if (upgrade3Bought)
+                {
+                    MessageBox.Show("You already bought the upgrade!");
+                    return;
+                }
+
+                if (stars >= 400)
+                {
+                    upgrade3Button.Text = "Github Initiation (passive stars) (Bought)";
+                    stars -= 400;
+                    upgrade3Bought = true;
+                }
+                else
+                {
+                    MessageBox.Show("You need 400 stars to buy this upgrade!");
+                }
+            }
+        }
+
+        private void upgrade4Button_Click(object sender, EventArgs e)
+        {
+            {
+                if (upgrade4Bought)
+                {
+                    MessageBox.Show("You already bought the upgrade!");
+                    return;
+                }
+
+                if (stars >= 620)
+                {
+                    upgrade4Button.Text = "README Enlightenment (+50% stars) (Bought)";
+                    stars -= 620;
+                    starsModifier *= 1.5;
+                    upgrade4Bought = true;
+                }
+
+                else
+                {
+                    MessageBox.Show("You need 620 stars to buy this upgrade!");
+                }
             }
         }
     }
