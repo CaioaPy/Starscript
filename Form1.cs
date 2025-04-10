@@ -80,13 +80,36 @@ namespace lifeSimulator
                 label2.Visible = true;
                 htmlCssButton.Visible = true;
                 htmlCssBar.Visible = true;
-                upgradesTab.Visible = true;
             }
             if (currentClicks >= 25)
             {
                 upgrade1.Visible = true;
                 ShowTab("upgradesTab", 1);
             }
+            if (currentClicks >= 50)
+            {
+                label3.Visible = true;
+                toDoButton.Visible = true;
+                toDoBar.Visible = true;
+            }
+            if (currentClicks >= 60)
+            {
+                upgrade1.Visible = true;
+            }
+            if (currentClicks >= 110)
+            {
+                label4.Visible = true;
+                badDocumentationBar.Visible = true;
+                badDocumentationButton.Visible = true;
+            }
+            if (currentClicks >= 130)
+            {
+                label5.Visible = true;
+                calculatorBar.Visible = true;
+                calculatorButton.Visible = true;
+            }
+
+
             return 0;
         }
 
@@ -178,15 +201,20 @@ namespace lifeSimulator
         bool cooldown2 = false;
         private async void button1_Click_1(object sender, EventArgs e)
         {
-            int time = 2000;
-            cooldown2 = true;
-            double buttonTime = timeFunc(time);
-            await barFunc(timeFunc(buttonTime), htmlCssBar);
-            stars += starsFunc(2.5);
-            clicks += clicksFunc(1);
-            unlockFunc(clicks);
-            cooldown2 = false;
+            if (!cooldown2)
+            {
+                int time = 2000;
+                cooldown2 = true;
+                double buttonTime = timeFunc(time);
+                await barFunc(timeFunc(buttonTime), htmlCssBar);
+                stars += starsFunc(2.5);
+                clicks += clicksFunc(1);
+                unlockFunc(clicks);
+                cooldown2 = false;
+            }
         }
+
+
 
         private void upgrade1_Click_1(object sender, EventArgs e)
         {
@@ -222,6 +250,69 @@ namespace lifeSimulator
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        bool cooldown3 = false;
+        private async void toDoButton_Click(object sender, EventArgs e)
+        {
+            if (!cooldown3)
+            {
+                int time = 3500;
+                cooldown3 = true;
+                double buttonTime = timeFunc(time);
+                await barFunc(timeFunc(buttonTime), toDoBar);
+                stars += starsFunc(6.5);
+                clicks += clicksFunc(1);
+                unlockFunc(clicks);
+                cooldown3 = false;
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        bool cooldown4 = false;
+        private async void badDocumentationButton_Click(object sender, EventArgs e)
+        {
+            if (!cooldown4)
+            {
+                int time = 5500;
+                cooldown4 = true;
+                double buttonTime = timeFunc(time);
+                await barFunc(timeFunc(buttonTime), toDoBar);
+                stars += starsFunc(12);
+                clicks += clicksFunc(1);
+                unlockFunc(clicks);
+                cooldown4 = false;
+            }
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        bool cooldown5 = false;
+        private async void calculatorButton_Click(object sender, EventArgs e)
+        {
+            if (!cooldown5)
+            {
+                int time = 8000;
+                cooldown5 = true;
+                double buttonTime = timeFunc(time);
+                await barFunc(timeFunc(buttonTime), toDoBar);
+                stars += starsFunc(20);
+                clicks += clicksFunc(1);
+                unlockFunc(clicks);
+                cooldown5 = false;
+            }
         }
     }
 }
