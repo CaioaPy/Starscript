@@ -31,7 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             upgradesTab = new TabPage();
             panel1 = new Panel();
-            button3 = new Button();
+            upgrade4Label = new Label();
+            upgrade4Button = new Button();
+            upgrade3Label = new Label();
+            upgrade3Button = new Button();
+            upgrade2Label = new Label();
+            upgrade1Label = new Label();
+            upgrade2 = new Button();
             upgrade1 = new Button();
             starsLabel = new Label();
             groupBox1 = new GroupBox();
@@ -81,7 +87,13 @@
             // panel1
             // 
             panel1.AutoScroll = true;
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(upgrade4Label);
+            panel1.Controls.Add(upgrade4Button);
+            panel1.Controls.Add(upgrade3Label);
+            panel1.Controls.Add(upgrade3Button);
+            panel1.Controls.Add(upgrade2Label);
+            panel1.Controls.Add(upgrade1Label);
+            panel1.Controls.Add(upgrade2);
             panel1.Controls.Add(upgrade1);
             panel1.Controls.Add(starsLabel);
             panel1.Dock = DockStyle.Top;
@@ -90,18 +102,94 @@
             panel1.Size = new Size(899, 661);
             panel1.TabIndex = 4;
             // 
-            // button3
+            // upgrade4Label
             // 
-            button3.BackColor = Color.Black;
-            button3.Font = new Font("Cambria", 12F);
-            button3.ForeColor = Color.LimeGreen;
-            button3.Location = new Point(3, 168);
-            button3.Name = "button3";
-            button3.Size = new Size(148, 113);
-            button3.TabIndex = 4;
-            button3.Text = "[130 stars] First 'Hello World' (+20% stars)";
-            button3.UseVisualStyleBackColor = false;
-            button3.Visible = false;
+            upgrade4Label.Font = new Font("Calisto MT", 24F);
+            upgrade4Label.Location = new Point(184, 437);
+            upgrade4Label.Name = "upgrade4Label";
+            upgrade4Label.Size = new Size(646, 81);
+            upgrade4Label.TabIndex = 10;
+            upgrade4Label.Text = "You finally wrote one—and it makes sense.";
+            upgrade4Label.TextAlign = ContentAlignment.MiddleLeft;
+            upgrade4Label.Visible = false;
+            // 
+            // upgrade4Button
+            // 
+            upgrade4Button.BackColor = Color.Black;
+            upgrade4Button.Font = new Font("Cambria", 12F);
+            upgrade4Button.ForeColor = Color.LimeGreen;
+            upgrade4Button.Location = new Point(3, 427);
+            upgrade4Button.Name = "upgrade4Button";
+            upgrade4Button.Size = new Size(148, 113);
+            upgrade4Button.TabIndex = 9;
+            upgrade4Button.Text = "[620 stars] README Enlightenment (+50% stars)";
+            upgrade4Button.UseVisualStyleBackColor = false;
+            upgrade4Button.Visible = false;
+            upgrade4Button.Click += upgrade4Button_Click;
+            // 
+            // upgrade3Label
+            // 
+            upgrade3Label.Font = new Font("Calisto MT", 24F);
+            upgrade3Label.Location = new Point(184, 309);
+            upgrade3Label.Name = "upgrade3Label";
+            upgrade3Label.Size = new Size(646, 81);
+            upgrade3Label.TabIndex = 8;
+            upgrade3Label.Text = "You’ve made your first public repo—welcome to the void community.";
+            upgrade3Label.TextAlign = ContentAlignment.MiddleLeft;
+            upgrade3Label.Visible = false;
+            // 
+            // upgrade3Button
+            // 
+            upgrade3Button.BackColor = Color.Black;
+            upgrade3Button.Font = new Font("Cambria", 12F);
+            upgrade3Button.ForeColor = Color.LimeGreen;
+            upgrade3Button.Location = new Point(3, 299);
+            upgrade3Button.Name = "upgrade3Button";
+            upgrade3Button.Size = new Size(148, 113);
+            upgrade3Button.TabIndex = 7;
+            upgrade3Button.Text = "[400 stars] Github Initiation (passive stars)";
+            upgrade3Button.UseVisualStyleBackColor = false;
+            upgrade3Button.Visible = false;
+            upgrade3Button.Click += upgrade3Button_Click;
+            // 
+            // upgrade2Label
+            // 
+            upgrade2Label.AutoSize = true;
+            upgrade2Label.Font = new Font("Calisto MT", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            upgrade2Label.Location = new Point(184, 200);
+            upgrade2Label.Name = "upgrade2Label";
+            upgrade2Label.Size = new Size(603, 37);
+            upgrade2Label.TabIndex = 6;
+            upgrade2Label.Text = "Ancient knowledge, copied with reverence.";
+            upgrade2Label.TextAlign = ContentAlignment.MiddleLeft;
+            upgrade2Label.Visible = false;
+            upgrade2Label.Click += upgrade2Label_Click;
+            // 
+            // upgrade1Label
+            // 
+            upgrade1Label.AutoSize = true;
+            upgrade1Label.Font = new Font("Calisto MT", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            upgrade1Label.Location = new Point(184, 72);
+            upgrade1Label.Name = "upgrade1Label";
+            upgrade1Label.Size = new Size(569, 37);
+            upgrade1Label.TabIndex = 5;
+            upgrade1Label.Text = "You spoke to the void—and it answered.";
+            upgrade1Label.Visible = false;
+            upgrade1Label.Click += label6_Click;
+            // 
+            // upgrade2
+            // 
+            upgrade2.BackColor = Color.Black;
+            upgrade2.Font = new Font("Cambria", 12F);
+            upgrade2.ForeColor = Color.LimeGreen;
+            upgrade2.Location = new Point(3, 168);
+            upgrade2.Name = "upgrade2";
+            upgrade2.Size = new Size(148, 113);
+            upgrade2.TabIndex = 4;
+            upgrade2.Text = "[230 stars] StackOverflow Link Scrolls (+25% work speed)";
+            upgrade2.UseVisualStyleBackColor = false;
+            upgrade2.Visible = false;
+            upgrade2.Click += upgrade2_Click;
             // 
             // upgrade1
             // 
@@ -112,7 +200,7 @@
             upgrade1.Name = "upgrade1";
             upgrade1.Size = new Size(148, 113);
             upgrade1.TabIndex = 3;
-            upgrade1.Text = "[130 stars] First 'Hello World' (+20% stars)";
+            upgrade1.Text = "[50 stars] First 'Hello World' (+30% stars)";
             upgrade1.UseVisualStyleBackColor = false;
             upgrade1.Visible = false;
             upgrade1.Click += upgrade1_Click_1;
@@ -135,7 +223,7 @@
             groupBox1.Controls.Add(hScrollBar1);
             groupBox1.Controls.Add(button2);
             groupBox1.Font = new Font("Segoe UI", 20F);
-            groupBox1.Location = new Point(294, 2262);
+            groupBox1.Location = new Point(213, 4440);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(940, 195);
             groupBox1.TabIndex = 2;
@@ -202,7 +290,7 @@
             // 
             // calculatorBar
             // 
-            calculatorBar.Location = new Point(24, 332);
+            calculatorBar.Location = new Point(16, 324);
             calculatorBar.Name = "calculatorBar";
             calculatorBar.Size = new Size(251, 23);
             calculatorBar.TabIndex = 16;
@@ -212,7 +300,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F);
-            label5.Location = new Point(18, 301);
+            label5.Location = new Point(10, 293);
             label5.Name = "label5";
             label5.Size = new Size(123, 28);
             label5.TabIndex = 15;
@@ -222,7 +310,7 @@
             // 
             // calculatorButton
             // 
-            calculatorButton.Location = new Point(23, 361);
+            calculatorButton.Location = new Point(15, 353);
             calculatorButton.Name = "calculatorButton";
             calculatorButton.Size = new Size(124, 32);
             calculatorButton.TabIndex = 14;
@@ -233,7 +321,7 @@
             // 
             // badDocumentationBar
             // 
-            badDocumentationBar.Location = new Point(338, 215);
+            badDocumentationBar.Location = new Point(338, 207);
             badDocumentationBar.Name = "badDocumentationBar";
             badDocumentationBar.Size = new Size(251, 23);
             badDocumentationBar.TabIndex = 13;
@@ -243,7 +331,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15F);
-            label4.Location = new Point(332, 184);
+            label4.Location = new Point(332, 176);
             label4.Name = "label4";
             label4.Size = new Size(272, 28);
             label4.TabIndex = 12;
@@ -253,7 +341,7 @@
             // 
             // badDocumentationButton
             // 
-            badDocumentationButton.Location = new Point(337, 244);
+            badDocumentationButton.Location = new Point(337, 236);
             badDocumentationButton.Name = "badDocumentationButton";
             badDocumentationButton.Size = new Size(124, 32);
             badDocumentationButton.TabIndex = 11;
@@ -264,7 +352,7 @@
             // 
             // toDoBar
             // 
-            toDoBar.Location = new Point(21, 215);
+            toDoBar.Location = new Point(13, 207);
             toDoBar.Name = "toDoBar";
             toDoBar.Size = new Size(251, 23);
             toDoBar.TabIndex = 10;
@@ -274,7 +362,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15F);
-            label3.Location = new Point(15, 184);
+            label3.Location = new Point(7, 176);
             label3.Name = "label3";
             label3.Size = new Size(302, 28);
             label3.TabIndex = 9;
@@ -284,7 +372,7 @@
             // 
             // toDoButton
             // 
-            toDoButton.Location = new Point(20, 244);
+            toDoButton.Location = new Point(12, 236);
             toDoButton.Name = "toDoButton";
             toDoButton.Size = new Size(124, 32);
             toDoButton.TabIndex = 8;
@@ -297,7 +385,7 @@
             // 
             starsVar.AutoSize = true;
             starsVar.Font = new Font("Segoe UI", 20F);
-            starsVar.Location = new Point(8, 0);
+            starsVar.Location = new Point(0, 0);
             starsVar.Name = "starsVar";
             starsVar.Size = new Size(101, 37);
             starsVar.TabIndex = 1;
@@ -314,7 +402,7 @@
             // 
             // pokedexButton
             // 
-            pokedexButton.Location = new Point(17, 109);
+            pokedexButton.Location = new Point(9, 109);
             pokedexButton.Name = "pokedexButton";
             pokedexButton.Size = new Size(124, 32);
             pokedexButton.TabIndex = 0;
@@ -324,7 +412,7 @@
             // 
             // pokedexBar
             // 
-            pokedexBar.Location = new Point(18, 80);
+            pokedexBar.Location = new Point(10, 80);
             pokedexBar.Name = "pokedexBar";
             pokedexBar.Size = new Size(251, 23);
             pokedexBar.TabIndex = 6;
@@ -333,7 +421,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(15, 49);
+            label1.Location = new Point(7, 49);
             label1.Name = "label1";
             label1.Size = new Size(260, 28);
             label1.TabIndex = 3;
@@ -420,6 +508,12 @@
         private ProgressBar calculatorBar;
         private Label label5;
         private Button calculatorButton;
-        private Button button3;
+        private Button upgrade2;
+        private Label upgrade1Label;
+        private Label upgrade2Label;
+        private Label upgrade3Label;
+        private Button upgrade3Button;
+        private Label upgrade4Label;
+        private Button upgrade4Button;
     }
 }
