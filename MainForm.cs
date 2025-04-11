@@ -2,7 +2,8 @@ namespace lifeSimulator
 {
     public partial class MainForm : Form
     {
-        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer mainTimer;
+        private System.Windows.Forms.Timer internsTimer;
         private TabPage hiddenTab;
 
         List<TabPage> hiddenTabs = new List<TabPage>();
@@ -10,11 +11,18 @@ namespace lifeSimulator
         public MainForm()
         {
             InitializeComponent();
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 50;
-            timer.Tick += timer_Tick;
-            timer.Start();
+            mainTimer = new System.Windows.Forms.Timer();
+            mainTimer.Interval = 50;
+            mainTimer.Tick += timer_Tick;
+            mainTimer.Start();
+
+            internsTimer = new System.Windows.Forms.Timer();
+            internsTimer.Interval = 1000;
+            internsTimer.Tick += internsTimer_Tick;
+            internsTimer.Start();
+
             HideTab("upgradesTab");
+            HideTab("internsTab");
         }
 
         //currency and modifiers
@@ -25,10 +33,13 @@ namespace lifeSimulator
         double timeModifier = 1;
 
         //upgrades
-        bool upgrade1Bought = false;
-        bool upgrade2Bought = false;
-        bool upgrade3Bought = false;
-        bool upgrade4Bought = false;
+        bool helloWorldBought = false;
+        bool stackOverflowBought = false;
+        bool gitHubBought = false;
+        bool readmeBought = false;
+
+        //interns
+        bool pokedexIntern = false;
 
         private void HideTab(string tabName)
         {
@@ -59,9 +70,18 @@ namespace lifeSimulator
         {
             starsVar.Text = "Stars: " + stars;
             starsLabel.Text = "Stars: " + stars;
-            if (upgrade3Bought)
+            internsStarLabel.Text = "Stars: " + stars;
+            if (gitHubBought)
             {
                 stars += Math.Floor(starsFunc(0.25) * 0.05);
+            }
+        }
+
+        private void internsTimer_Tick(object sender, EventArgs e)
+        {
+            if (pokedexIntern)
+            {
+                button1_Click(sender, e);
             }
         }
 
@@ -208,7 +228,7 @@ namespace lifeSimulator
 
         private void upgrade1_Click_1(object sender, EventArgs e)
         {
-            if (upgrade1Bought)
+            if (helloWorldBought)
             {
                 MessageBox.Show("You already bought the upgrade!");
                 return;
@@ -219,7 +239,7 @@ namespace lifeSimulator
                 upgrade1.Text = "First 'Hello World' (Bought)";
                 starsModifier *= 1.3;
                 stars -= 50;
-                upgrade1Bought = true;
+                helloWorldBought = true;
             }
             else
             {
@@ -277,7 +297,7 @@ namespace lifeSimulator
 
         private void upgrade2_Click(object sender, EventArgs e)
         {
-            if (upgrade2Bought)
+            if (stackOverflowBought)
             {
                 MessageBox.Show("You already bought the upgrade!");
                 return;
@@ -288,7 +308,7 @@ namespace lifeSimulator
                 upgrade2.Text = "StackOverflow Link Scrolls (Bought)";
                 timeModifier *= 0.75;
                 stars -= 230;
-                upgrade2Bought = true;
+                stackOverflowBought = true;
             }
             else
             {
@@ -299,7 +319,7 @@ namespace lifeSimulator
         private void upgrade3Button_Click(object sender, EventArgs e)
         {
             {
-                if (upgrade3Bought)
+                if (gitHubBought)
                 {
                     MessageBox.Show("You already bought the upgrade!");
                     return;
@@ -309,7 +329,7 @@ namespace lifeSimulator
                 {
                     upgrade3Button.Text = "Github Initiation (passive stars) (Bought)";
                     stars -= 400;
-                    upgrade3Bought = true;
+                    gitHubBought = true;
                 }
                 else
                 {
@@ -321,7 +341,7 @@ namespace lifeSimulator
         private void upgrade4Button_Click(object sender, EventArgs e)
         {
             {
-                if (upgrade4Bought)
+                if (readmeBought)
                 {
                     MessageBox.Show("You already bought the upgrade!");
                     return;
@@ -332,12 +352,35 @@ namespace lifeSimulator
                     upgrade4Button.Text = "README Enlightenment (+50% stars) (Bought)";
                     stars -= 620;
                     starsModifier *= 1.5;
-                    upgrade4Bought = true;
+                    readmeBought = true;
                 }
 
                 else
                 {
                     MessageBox.Show("You need 620 stars to buy this upgrade!");
+                }
+            }
+        }
+
+        private void pokedexInternButton_Click(object sender, EventArgs e)
+        {
+            {
+                if (pokedexIntern)
+                {
+                    MessageBox.Show("You already paid this intern!");
+                    return;
+                }
+
+                if (stars >= 70)
+                {
+                    pokedexInternButton.Text = "Loopie (automates Pokédex work) (Bought)";
+                    stars -= 70;
+                    pokedexIntern = true;
+                }
+
+                else
+                {
+                    MessageBox.Show("You need 70 stars to pay this intern!");
                 }
             }
         }

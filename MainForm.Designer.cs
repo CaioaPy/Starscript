@@ -62,12 +62,25 @@
             label2 = new Label();
             htmlCssButton = new Button();
             tabControl = new TabControl();
+            internsTab = new TabPage();
+            panel2 = new Panel();
+            label6 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            pokedexInternButton = new Button();
+            internsStarLabel = new Label();
+            groupBox2 = new GroupBox();
+            hScrollBar2 = new HScrollBar();
+            button6 = new Button();
             upgradesTab.SuspendLayout();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             workTab.SuspendLayout();
             workPanel.SuspendLayout();
             tabControl.SuspendLayout();
+            internsTab.SuspendLayout();
+            panel2.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // upgradesTab
@@ -219,7 +232,7 @@
             groupBox1.Controls.Add(hScrollBar1);
             groupBox1.Controls.Add(button2);
             groupBox1.Font = new Font("Segoe UI", 20F);
-            groupBox1.Location = new Point(213, 4440);
+            groupBox1.Location = new Point(159, 5892);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(940, 195);
             groupBox1.TabIndex = 2;
@@ -444,20 +457,137 @@
             // 
             tabControl.Controls.Add(workTab);
             tabControl.Controls.Add(upgradesTab);
+            tabControl.Controls.Add(internsTab);
             tabControl.Location = new Point(-3, 0);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
             tabControl.Size = new Size(930, 450);
             tabControl.TabIndex = 0;
             // 
-            // Form1
+            // internsTab
+            // 
+            internsTab.AutoScroll = true;
+            internsTab.BackColor = Color.White;
+            internsTab.Controls.Add(panel2);
+            internsTab.Controls.Add(groupBox2);
+            internsTab.Location = new Point(4, 24);
+            internsTab.Name = "internsTab";
+            internsTab.Padding = new Padding(3);
+            internsTab.Size = new Size(922, 422);
+            internsTab.TabIndex = 2;
+            internsTab.Text = "Interns";
+            // 
+            // panel2
+            // 
+            panel2.AutoScroll = true;
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(pokedexInternButton);
+            panel2.Controls.Add(internsStarLabel);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(899, 661);
+            panel2.TabIndex = 4;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Algerian", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(176, 25);
+            label6.Name = "label6";
+            label6.Size = new Size(611, 41);
+            label6.TabIndex = 7;
+            label6.Text = "Outsourcing Insight (Interns)";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            label8.Font = new Font("Calisto MT", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(176, 234);
+            label8.Name = "label8";
+            label8.Size = new Size(622, 81);
+            label8.TabIndex = 6;
+            label8.Text = "Always stuck in a loop, but enthusiastic. He's in for pokédex.";
+            label8.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Calisto MT", 18F);
+            label9.Location = new Point(3, 95);
+            label9.Name = "label9";
+            label9.Size = new Size(893, 76);
+            label9.TabIndex = 5;
+            label9.Text = "You’ve stopped growing from the simple tasks. You now guide others. You hire, delegate, and orchestrate what once taught you everything.";
+            label9.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // pokedexInternButton
+            // 
+            pokedexInternButton.BackColor = Color.Black;
+            pokedexInternButton.Font = new Font("Cambria", 12F);
+            pokedexInternButton.ForeColor = Color.LimeGreen;
+            pokedexInternButton.Location = new Point(3, 224);
+            pokedexInternButton.Name = "pokedexInternButton";
+            pokedexInternButton.Size = new Size(148, 113);
+            pokedexInternButton.TabIndex = 4;
+            pokedexInternButton.Text = "[70 stars] Loopie (automates Pokédex work)";
+            pokedexInternButton.UseVisualStyleBackColor = false;
+            pokedexInternButton.Click += pokedexInternButton_Click;
+            // 
+            // internsStarLabel
+            // 
+            internsStarLabel.AutoSize = true;
+            internsStarLabel.Font = new Font("Segoe UI", 20F);
+            internsStarLabel.Location = new Point(3, 171);
+            internsStarLabel.Name = "internsStarLabel";
+            internsStarLabel.Size = new Size(101, 37);
+            internsStarLabel.TabIndex = 1;
+            internsStarLabel.Text = "Stars: 0";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Anchor = AnchorStyles.Bottom;
+            groupBox2.BackColor = Color.DarkGray;
+            groupBox2.Controls.Add(hScrollBar2);
+            groupBox2.Controls.Add(button6);
+            groupBox2.Font = new Font("Segoe UI", 20F);
+            groupBox2.Location = new Point(511, 5892);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(940, 195);
+            groupBox2.TabIndex = 2;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Upgrades";
+            // 
+            // hScrollBar2
+            // 
+            hScrollBar2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            hScrollBar2.Location = new Point(0, 346);
+            hScrollBar2.Name = "hScrollBar2";
+            hScrollBar2.Size = new Size(926, 17);
+            hScrollBar2.TabIndex = 1;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Black;
+            button6.Font = new Font("Cambria", 12F);
+            button6.ForeColor = Color.LimeGreen;
+            button6.Location = new Point(6, 42);
+            button6.Name = "button6";
+            button6.Size = new Size(148, 113);
+            button6.TabIndex = 0;
+            button6.Text = "[130 stars] First 'Hello World' (+20% stars)";
+            button6.UseVisualStyleBackColor = false;
+            button6.Visible = false;
+            // 
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(923, 450);
             Controls.Add(tabControl);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Starscript";
             upgradesTab.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -467,6 +597,10 @@
             workPanel.ResumeLayout(false);
             workPanel.PerformLayout();
             tabControl.ResumeLayout(false);
+            internsTab.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -505,5 +639,15 @@
         private Button upgrade3Button;
         private Label upgrade4Label;
         private Button upgrade4Button;
+        private TabPage internsTab;
+        private Panel panel2;
+        private Label label8;
+        private Label label9;
+        private Button pokedexInternButton;
+        private Label internsStarLabel;
+        private GroupBox groupBox2;
+        private HScrollBar hScrollBar2;
+        private Button button6;
+        private Label label6;
     }
 }
