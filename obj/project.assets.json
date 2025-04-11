@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\lifeSimulator\\lifeSimulator.csproj",
-      "projectName": "lifeSimulator",
-      "projectPath": "C:\\Users\\User\\source\\repos\\lifeSimulator\\lifeSimulator.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\lifeSimulator\\StarScript.csproj",
+      "projectName": "StarScript",
+      "projectPath": "C:\\Users\\User\\source\\repos\\lifeSimulator\\StarScript.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\source\\repos\\lifeSimulator\\obj\\",
       "projectStyle": "PackageReference",

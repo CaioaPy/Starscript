@@ -1,1 +1,1 @@
-# lifeSimulator
+# StarScript

@@ -1,6 +1,6 @@
 ﻿namespace lifeSimulator
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             upgradesTab = new TabPage();
             panel1 = new Panel();
             upgrade4Label = new Label();
@@ -82,7 +82,6 @@
             upgradesTab.Size = new Size(922, 422);
             upgradesTab.TabIndex = 1;
             upgradesTab.Text = "Upgrades";
-            upgradesTab.Click += tabPage2_Click;
             // 
             // panel1
             // 
@@ -163,7 +162,6 @@
             upgrade2Label.Text = "Ancient knowledge, copied with reverence.";
             upgrade2Label.TextAlign = ContentAlignment.MiddleLeft;
             upgrade2Label.Visible = false;
-            upgrade2Label.Click += upgrade2Label_Click;
             // 
             // upgrade1Label
             // 
@@ -175,7 +173,6 @@
             upgrade1Label.TabIndex = 5;
             upgrade1Label.Text = "You spoke to the void—and it answered.";
             upgrade1Label.Visible = false;
-            upgrade1Label.Click += label6_Click;
             // 
             // upgrade2
             // 
@@ -214,7 +211,6 @@
             starsLabel.Size = new Size(101, 37);
             starsLabel.TabIndex = 1;
             starsLabel.Text = "Stars: 0";
-            starsLabel.Click += label5_Click;
             // 
             // groupBox1
             // 
@@ -262,7 +258,6 @@
             workTab.TabIndex = 0;
             workTab.Text = "Work";
             workTab.UseVisualStyleBackColor = true;
-            workTab.Click += tabPage1_Click;
             // 
             // workPanel
             // 
@@ -306,7 +301,6 @@
             label5.TabIndex = 15;
             label5.Text = "JS Calculator";
             label5.Visible = false;
-            label5.Click += label5_Click_1;
             // 
             // calculatorButton
             // 
@@ -337,7 +331,6 @@
             label4.TabIndex = 12;
             label4.Text = "Write Bad Documentation \\o/";
             label4.Visible = false;
-            label4.Click += label4_Click;
             // 
             // badDocumentationButton
             // 
@@ -368,7 +361,6 @@
             label3.TabIndex = 9;
             label3.Text = "To-Do List... Wow... How original...";
             label3.Visible = false;
-            label3.Click += label3_Click;
             // 
             // toDoButton
             // 
@@ -390,7 +382,6 @@
             starsVar.Size = new Size(101, 37);
             starsVar.TabIndex = 1;
             starsVar.Text = "Stars: 0";
-            starsVar.Click += label1_Click;
             // 
             // htmlCssBar
             // 
@@ -468,7 +459,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Starscript";
-            Load += Form1_Load;
             upgradesTab.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

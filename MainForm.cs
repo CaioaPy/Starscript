@@ -1,23 +1,20 @@
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
-
 namespace lifeSimulator
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private System.Windows.Forms.Timer timer;
         private TabPage hiddenTab;
 
         List<TabPage> hiddenTabs = new List<TabPage>();
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 50;
             timer.Tick += timer_Tick;
             timer.Start();
-            HideTab("upgradesTab"); //hide tab
+            HideTab("upgradesTab");
         }
 
         //currency and modifiers
@@ -124,7 +121,6 @@ namespace lifeSimulator
                 calculatorButton.Visible = true;
             }
 
-
             return 0;
         }
 
@@ -170,27 +166,6 @@ namespace lifeSimulator
             bar.Value = bar.Maximum;
             await Task.Delay(finalDelay);
             bar.Value = 0;
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         bool cooldown1 = false;
@@ -252,26 +227,6 @@ namespace lifeSimulator
             }
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         bool cooldown3 = false;
         private async void toDoButton_Click(object sender, EventArgs e)
         {
@@ -286,11 +241,6 @@ namespace lifeSimulator
                 unlockFunc(clicks);
                 cooldown3 = false;
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         bool cooldown4 = false;
@@ -309,11 +259,6 @@ namespace lifeSimulator
             }
         }
 
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         bool cooldown5 = false;
         private async void calculatorButton_Click(object sender, EventArgs e)
         {
@@ -328,11 +273,6 @@ namespace lifeSimulator
                 unlockFunc(clicks);
                 cooldown5 = false;
             }
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void upgrade2_Click(object sender, EventArgs e)
@@ -354,11 +294,6 @@ namespace lifeSimulator
             {
                 MessageBox.Show("You need 230 stars to buy this upgrade!");
             }
-        }
-
-        private void upgrade2Label_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void upgrade3Button_Click(object sender, EventArgs e)
